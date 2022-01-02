@@ -6,6 +6,8 @@ public class GamblerProgram {
 		int stake=100;
 		int betsPerGame=1;
 		int totalAmount = 0;
+		int daysLoss=0;
+		int daysWon=0;
 		for (int i = 1; i <= 20; i++) {
 		while(stake>50 && stake<150) {
 			double winOrLoose=Math.floor(Math.random()*10)%2;
@@ -18,12 +20,14 @@ public class GamblerProgram {
 				stake=stake-1;
 				System.out.println("After loosing the game your total amount is:"+stake);
 			}
+			}
 			if(stake==50) {
 				System.out.println("Today you loose your 50% amount so you have to resign for the day");
+				daysLoss=daysLoss+1;
 			}else {
 				System.out.println("Today you won your 50% amount so you have to resign for the day");
+				daysWon=daysWon+1;
 			}
-	}
 		totalAmount=totalAmount+stake;
 		System.out.println(totalAmount);
 	}
@@ -39,5 +43,6 @@ public class GamblerProgram {
 		else {
 			System.out.println("you are neither in loss nor in profit: " + totalAmount);
 		}
+		System.out.println("In a Month"+ daysWon+"days won and"+daysLoss+"days lost");
 }
 }
