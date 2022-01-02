@@ -21,13 +21,14 @@ public class GamblerProgram {
 				System.out.println("After loosing the game your total amount is:"+stake);
 				}
 			}
-			}
 			if(stake==50) {
 				System.out.println("Today you loose your 50% amount so you have to resign for the day");
 				daysLoss=daysLoss+1;
+				System.out.println("Day"+i+"is a unlucky day as he lost maximum amount Rs:"+stake);
 			}else {
 				System.out.println("Today you won your 50% amount so you have to resign for the day");
 				daysWon=daysWon+1;
+				System.out.println("Day"+i+"is a lucky day as he won maximum amount Rs:"+stake);
 			}
 		totalAmount=totalAmount+stake;
 		System.out.println(totalAmount);
