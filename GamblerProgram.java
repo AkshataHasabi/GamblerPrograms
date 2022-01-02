@@ -17,17 +17,17 @@ public class GamblerProgram {
 				System.out.println("you loose the game");
 				stake=stake-1;
 				System.out.println("After loosing the game your total amount is:"+stake);
+				}
 			}
 			if(stake==50) {
 				System.out.println("Today you loose your 50% amount so you have to resign for the day");
 			}else {
 				System.out.println("Today you won your 50% amount so you have to resign for the day");
 			}
-	}
 		totalAmount=totalAmount+stake;
 		System.out.println(totalAmount);
 	}
-		System.out.println("After 20 days total amount is:"+totalAmount);
+		System.out.println("After 20 days of playing total amount is: " +totalAmount);
 		if(totalAmount > 2000) {
 			int profit = totalAmount - 2000;
 			System.out.println("you are in profit by: " + profit);
