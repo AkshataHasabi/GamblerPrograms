@@ -1,8 +1,9 @@
 package com.bridgelab.gamblerprograms;
+import java.util.Scanner;
 
 public class GamblerProgram {
 
-	public static void main(String[] args) {
+	public  void gameStart() {
 		int stake=100;
 		int betsPerGame=1;
 		int totalAmount = 0;
@@ -24,11 +25,9 @@ public class GamblerProgram {
 			if(stake==50) {
 				System.out.println("Today you loose your 50% amount so you have to resign for the day");
 				daysLoss=daysLoss+1;
-				System.out.println("Day"+i+"is a unlucky day as he lost maximum amount Rs:"+stake);
 			}else {
 				System.out.println("Today you won your 50% amount so you have to resign for the day");
 				daysWon=daysWon+1;
-				System.out.println("Day"+i+"is a lucky day as he won maximum amount Rs:"+stake);
 			}
 		totalAmount=totalAmount+stake;
 		System.out.println(totalAmount);
@@ -46,5 +45,26 @@ public class GamblerProgram {
 			System.out.println("you are neither in loss nor in profit: " + totalAmount);
 		}
 		System.out.println("In a Month"+ daysWon+"days won and"+daysLoss+"days lost");
+}
+	
+	public static void main(String[] args) {
+		
+		GamblerProgram gamblerProgram=new GamblerProgram();
+		int i=0;
+		while(i==0) {
+			System.out.println("1.would you like to continue playing next month"+"\n"+"2.stop gambling");
+			Scanner sc=new Scanner(System.in);
+			int option=sc.nextInt();
+		 switch (option) {
+         case 1:
+        	 gamblerProgram.gameStart();
+             break;
+         case 2:
+        	 i=1;
+             break;   
+         default:
+             System.out.println("compile again");
+		 }
+	}
 }
 }
